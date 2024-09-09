@@ -1,0 +1,44 @@
+body {
+  background-color: #cdcdcd;
+  font-family: monospace;
+}
+
+.currency-root {
+  border-radius: 20px;
+  font-weight: lighter;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px 15px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.currency-root > input {
+  font-family: monospace;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+button {
+  font-family: monospace;
+  border-radius: 15px;
+  border: none;
+  margin-top: 5px;
+  padding: 10px 15px;
+  align-items: center;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transform: translateY(0.5px);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}

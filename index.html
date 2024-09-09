@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="currency-root">
+      <h2>CHF</h2>
+      <input id="input-chf" type="number" />
+    </div>
+    <div class="currency-root">
+      <h2>CZK</h2>
+      <input id="input-czk" type="number" />
+    </div>
+
+    <div class="button-container">
+      <button id="convert-button-1">Convert to CZK</button>
+      <button id="convert-button-2">Convert to CHF</button>
+    </div>
+
+    <script>
+      //input field
+      let inputChf = document.getElementById("input-chf");
+      let inputCzk = document.getElementById("input-czk");
+
+      //buttons
+      let convertButtonCZK = document.getElementById("convert-button-1");
+      let convertButtonCHF = document.getElementById("convert-button-2");
+
+      //convert francs CHF to CZK
+      function convertToCZK(francs) {
+        let exchangeRate = 26.679241;
+        return francs * exchangeRate;
+      }
+
+      //convert userInput by button press
+      function handleClick1(event) {
+        let userInput = inputChf.value;
+        let result = convertToCZK(userInput);
+
+        inputCzk.value = result.toFixed(2);
+      }
+
+      //convert CZK to CHF
+      function convertToCHF(czk) {
+        let exchangeRate = 26.679241;
+        return czk / exchangeRate;
+      }
+
+      //convert userInput by button press
+      function handleClick2(event) {
+        let userInput = inputCzk.value;
+        let result = convertToCHF(userInput);
+
+        inputChf.value = result.toFixed(2);
+      }
+
+      convertButtonCZK.addEventListener("click", handleClick1);
+      convertButtonCHF.addEventListener("click", handleClick2);
+    </script>
+  </body>
+</html>
